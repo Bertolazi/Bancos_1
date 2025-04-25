@@ -21,8 +21,8 @@ theme:
     - content.code.annotation
     - content.code.copy
   language: pt-BR
-  favicon: assets/google-37.png
-  logo: assets/google-37.png
+  favicon: asstes/logounb_doc.svg
+  logo: asstes/logounb_doc.svg
   palette:
     - scheme: default
       toggle:
