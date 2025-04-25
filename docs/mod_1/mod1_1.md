@@ -49,3 +49,49 @@ Como tudo no mundo da tecnologia podemos ver claramente alguns problemas nesses 
 Nesses tipos de sistemas de informação temos os dados gravados em disco usando **estrutura de dados**, ou seja, o acesso demanda conhecimento dessas estruturas de dados, chamamos isso de dependência de dados.
 
 ## Dependência de dados
+
+- Vários programas compartilhando os mesmos dados;
+- Todos devem estudar e conhecer as mesmas estruturas;
+- **Acoplamento forte**;
+- Se houver uma alteração na estrutura de dados **todos os programas devem ser alterados**.
+
+Mas como podemos fazer com que não tenhamos essa dependência de dados? A resposta é simples, criando um sistema que gerencie a estrutura. Veja com com as imagens abaixo, uma ilustração simplificada do funcionamento.
+
+<p style="text-align: center">Figura 3 - Funcionamento do sistema gerenciador de dados</p>
+
+<center>
+
+![Sistema gerenciador de dados](../asstes/cap_3.png)
+
+</center>
+
+<p style="text-align: center">Fonte - Slides do professor Maurício</p>
+
+<br>
+
+<p style="text-align: center">Figura 4 - SGBD (Sistema gerenciador de banco de dados)</p>
+
+<center>
+
+![SGBD](../asstes/cap_4.png)
+
+</center>
+
+<p style="text-align: center">Fonte - Slides do professor Maurício</p>
+
+## Sistema gerenciador de banco de dados (SGBD)
+
+- Composto por:
+    - Conjunto de dados
+        - Base de dados;
+        - Tabelas e índices;
+        - Tuplas.
+    - Conjunto de programas
+        - Acesso dos dados;
+        - Manipulação dos dados.
+- É um sistema de propósito geral
+    - Mantém um conjunto lógico e organizado de dados;
+    - Armazena grande volume de dados;
+    - Permite busca e atualização dos dados;
+    - É eficiente;
+    - É autônomo em relação às aplicações
