@@ -13,7 +13,7 @@ Para a alta evolução dos sistemas de bancos de dados tivemos antes um avanço 
 
 <center>
 
-![imagem aplicação](../asstes/cap_1.png)
+![imagem aplicação](../assets/cap_1.png)
 
 </center>
 
@@ -25,7 +25,7 @@ Para a alta evolução dos sistemas de bancos de dados tivemos antes um avanço 
 
 <center>
 
-![imagem redundância e inconsistência](../asstes/cap_2.png)
+![imagem redundância e inconsistência](../assets/cap_2.png)
 
 </center>
 
@@ -61,7 +61,7 @@ Mas como podemos fazer com que não tenhamos essa dependência de dados? A respo
 
 <center>
 
-![Sistema gerenciador de dados](../asstes/cap_3.png)
+![Sistema gerenciador de dados](../assets/cap_3.png)
 
 </center>
 
@@ -73,7 +73,7 @@ Mas como podemos fazer com que não tenhamos essa dependência de dados? A respo
 
 <center>
 
-![SGBD](../asstes/cap_4.png)
+![SGBD](../assets/cap_4.png)
 
 </center>
 
@@ -95,3 +95,13 @@ Mas como podemos fazer com que não tenhamos essa dependência de dados? A respo
     - Permite busca e atualização dos dados;
     - É eficiente;
     - É autônomo em relação às aplicações
+
+<p style="text-align: center">Figura 5 - SGBD aplicado</p>
+
+<center>
+
+![SGBD_1](../assets/cap_5.png)
+
+</center>
+
+<p style="text-align: center">Fonte - Slides do professor Maurício</p>

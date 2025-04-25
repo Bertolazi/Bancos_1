@@ -21,8 +21,8 @@ theme:
     - content.code.annotation
     - content.code.copy
   language: pt-BR
-  favicon: asstes/logounb_doc.svg
-  logo: asstes/logounb_doc.svg
+  favicon: assets/logounb_doc.svg
+  logo: assets/logounb_doc.svg
   palette:
     - scheme: default
       toggle:
