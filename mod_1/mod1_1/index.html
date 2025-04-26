@@ -444,6 +444,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#utilizando-um-sgbd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilizando um SGBD
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -554,6 +563,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#utilizando-um-sgbd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilizando um SGBD
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -581,23 +599,13 @@
 </ul>
 <p style="text-align: center">Figura 1 - Esquemograma sistemas de informações</p>
 
-<center>
-
-![imagem aplicação](../assets/cap_1.png)
-
-</center>
-
+<p><img alt="imagem aplicação" src="../../assets/cap_1.png" /></p>
 <p style="text-align: center">Fonte - Slides do professor Maurício</p>
 
 <p><br></p>
 <p style="text-align: center">Figura 2 - Redundância e inconsistência nos sistemas de informações</p>
 
-<center>
-
-![imagem redundância e inconsistência](../assets/cap_2.png)
-
-</center>
-
+<p><img alt="imagem redundância e inconsistência" src="../../assets/cap_2.png" /></p>
 <p style="text-align: center">Fonte - Slides do professor Maurício</p>
 
 <h2 id="consistencia-de-dados">Consistência de dados</h2>
@@ -625,23 +633,13 @@
 <p>Mas como podemos fazer com que não tenhamos essa dependência de dados? A resposta é simples, criando um sistema que gerencie a estrutura. Veja com com as imagens abaixo, uma ilustração simplificada do funcionamento.</p>
 <p style="text-align: center">Figura 3 - Funcionamento do sistema gerenciador de dados</p>
 
-<center>
-
-![Sistema gerenciador de dados](../assets/cap_3.png)
-
-</center>
-
+<p><img alt="Sistema gerenciador de dados" src="../../assets/cap_3.png" /></p>
 <p style="text-align: center">Fonte - Slides do professor Maurício</p>
 
 <p><br></p>
 <p style="text-align: center">Figura 4 - SGBD (Sistema gerenciador de banco de dados)</p>
 
-<center>
-
-![SGBD](../assets/cap_4.png)
-
-</center>
-
+<p><img alt="SGBD" src="../../assets/cap_4.png" /></p>
 <p style="text-align: center">Fonte - Slides do professor Maurício</p>
 
 <h2 id="sistema-gerenciador-de-banco-de-dados-sgbd">Sistema gerenciador de banco de dados (SGBD)</h2>
@@ -671,12 +669,7 @@
 </ul>
 <p style="text-align: center">Figura 5 - SGBD aplicado</p>
 
-<center>
-
-![SGBD_1](../assets/cap_5.png)
-
-</center>
-
+<p><img alt="SGBD_1" src="../../assets/cap_5.png" /></p>
 <p style="text-align: center">Fonte - Slides do professor Maurício</p>
 
 <ul>
@@ -709,6 +702,58 @@
 <li>O preço de venda de um produto não pode ser superior ao seu custo;</li>
 <li>O código de cada produto deve ser único.</li>
 </ul>
+<p style="text-align: center">Figura 6 - Componetes de um SGBD</p>
+
+<p><img alt="SGBD_2" src="../../assets/cap_6.png" /></p>
+<p style="text-align: center">Fonte - Slides do professor Maurício</p>
+
+<h2 id="utilizando-um-sgbd">Utilizando um SGBD</h2>
+<ol>
+<li>Modelagem<ul>
+<li>Modelo entidade/relacionamento;</li>
+<li>Modelo relacional.</li>
+</ul>
+</li>
+<li>Definição<ul>
+<li>SQL DDL</li>
+</ul>
+</li>
+<li>Instnciação<ul>
+<li>SQL DDL/DML</li>
+</ul>
+</li>
+<li>Uso<ul>
+<li>SQL DML</li>
+</ul>
+</li>
+</ol>
+<p>A interface dos bancos de dados é definida pela linguagem declarativa DQL(DDL+DML). Agora vamos ver masi doic conceitos procedural e declarativo:</p>
+<ul>
+<li><strong>Procedural</strong>: Exige especificações de quais dados são necessário e como conseguimos obtê-los.<ul>
+<li>Requer uma sequência específica de operações a serem executadas;</li>
+</ul>
+</li>
+<li>Não-procedural (declarativo): Exige apenas especificação de quais dados são necessários, e não de como obtê-los.</li>
+</ul>
+<p>SQL - Data Definition Language (DDL) tem um conjunto de comandos para a definição do esquema de base de dados, temos como seus principais elementos:</p>
+<ul>
+<li><strong>create</strong></li>
+<li><strong>alter</strong></li>
+<li><strong>drop</strong></li>
+</ul>
+<p>Assim como já se pode imaginar, se podemos criar e estamos falando de banco de dados moderno, obviamente podemos manipular esses dados também, os principais elementos de manipulação de dados são</p>
+<ul>
+<li><strong>select</strong></li>
+<li><strong>insert</strong></li>
+<li><strong>delete</strong></li>
+<li><strong>update</strong></li>
+</ul>
+<p>Mais um conccieto importante é o de <strong>metadados</strong> que também podemos chamar de <strong>dicionário de dados</strong>. São os bancos de dados do sistema, nele se armazena a descrição do sistema, metadados e restrições de segurança e integridade. Temos ainda outras denominações para esses metadados, são eles catálogo de dados, e diretório de dados.</p>
+<p style="text-align: center">Figura 7 e 8 - Fluxo SGBD</p>
+
+<p><img alt="SGBD_3" src="../../assets/cap_7.png" />
+<img alt="SGBD_4" src="../../assets/cap_8.png" /></p>
+<p style="text-align: center">Fonte - Slides do professor Maurício</p>
 
 
 
