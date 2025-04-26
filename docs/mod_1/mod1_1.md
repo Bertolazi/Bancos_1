@@ -11,11 +11,7 @@ Para a alta evolução dos sistemas de bancos de dados tivemos antes um avanço 
 
 <p style="text-align: center">Figura 1 - Esquemograma sistemas de informações</p>
 
-<center>
-
 ![imagem aplicação](../assets/cap_1.png)
-
-</center>
 
 <p style="text-align: center">Fonte - Slides do professor Maurício</p>
 
@@ -23,11 +19,7 @@ Para a alta evolução dos sistemas de bancos de dados tivemos antes um avanço 
 
 <p style="text-align: center">Figura 2 - Redundância e inconsistência nos sistemas de informações</p>
 
-<center>
-
 ![imagem redundância e inconsistência](../assets/cap_2.png)
-
-</center>
 
 <p style="text-align: center">Fonte - Slides do professor Maurício</p>
 
@@ -59,11 +51,7 @@ Mas como podemos fazer com que não tenhamos essa dependência de dados? A respo
 
 <p style="text-align: center">Figura 3 - Funcionamento do sistema gerenciador de dados</p>
 
-<center>
-
 ![Sistema gerenciador de dados](../assets/cap_3.png)
-
-</center>
 
 <p style="text-align: center">Fonte - Slides do professor Maurício</p>
 
@@ -71,11 +59,7 @@ Mas como podemos fazer com que não tenhamos essa dependência de dados? A respo
 
 <p style="text-align: center">Figura 4 - SGBD (Sistema gerenciador de banco de dados)</p>
 
-<center>
-
 ![SGBD](../assets/cap_4.png)
-
-</center>
 
 <p style="text-align: center">Fonte - Slides do professor Maurício</p>
 
@@ -98,11 +82,8 @@ Mas como podemos fazer com que não tenhamos essa dependência de dados? A respo
 
 <p style="text-align: center">Figura 5 - SGBD aplicado</p>
 
-<center>
-
 ![SGBD_1](../assets/cap_5.png)
 
-</center>
 
 <p style="text-align: center">Fonte - Slides do professor Maurício</p>
 
@@ -127,3 +108,48 @@ Temos dentro do mundo de bancos de dados restrições de integridade. Essas rest
 - O preço de venda de um produto não pode ser superior ao seu custo;
 - O código de cada produto deve ser único.
 
+<p style="text-align: center">Figura 6 - Componetes de um SGBD</p>
+
+![SGBD_2](../assets/cap_6.png)
+
+<p style="text-align: center">Fonte - Slides do professor Maurício</p>
+
+## Utilizando um SGBD
+
+1. Modelagem
+    - Modelo entidade/relacionamento;
+    - Modelo relacional.
+2. Definição
+    - SQL DDL
+3. Instnciação
+    - SQL DDL/DML
+4. Uso
+    - SQL DML
+
+A interface dos bancos de dados é definida pela linguagem declarativa DQL(DDL+DML). Agora vamos ver masi doic conceitos procedural e declarativo:
+
+- **Procedural**: Exige especificações de quais dados são necessário e como conseguimos obtê-los.
+    - Requer uma sequência específica de operações a serem executadas;
+- Não-procedural (declarativo): Exige apenas especificação de quais dados são necessários, e não de como obtê-los.
+
+SQL - Data Definition Language (DDL) tem um conjunto de comandos para a definição do esquema de base de dados, temos como seus principais elementos:
+
+- **create**
+- **alter**
+- **drop**
+
+Assim como já se pode imaginar, se podemos criar e estamos falando de banco de dados moderno, obviamente podemos manipular esses dados também, os principais elementos de manipulação de dados são
+
+- **select**
+- **insert**
+- **delete**
+- **update**
+
+Mais um conccieto importante é o de **metadados** que também podemos chamar de **dicionário de dados**. São os bancos de dados do sistema, nele se armazena a descrição do sistema, metadados e restrições de segurança e integridade. Temos ainda outras denominações para esses metadados, são eles catálogo de dados, e diretório de dados.
+
+<p style="text-align: center">Figura 7 e 8 - Fluxo SGBD</p>
+
+![SGBD_3](../assets/cap_7.png)
+![SGBD_4](../assets/cap_8.png)
+
+<p style="text-align: center">Fonte - Slides do professor Maurício</p>
