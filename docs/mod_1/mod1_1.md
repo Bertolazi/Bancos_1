@@ -105,3 +105,25 @@ Mas como podemos fazer com que não tenhamos essa dependência de dados? A respo
 </center>
 
 <p style="text-align: center">Fonte - Slides do professor Maurício</p>
+
+- Requisitos fundamentais
+  - Segurança
+    - Física (mais comum no passado)
+    - Lógica
+        - Usernames e passwords;
+        - Perfis de usuário.
+    - Integridade
+        - Consistência;
+        - Validade. 
+    - Recuperação e tolerância a falhas
+        - Transações atômicas
+        - Registros de log
+        - Backup
+    - Controle da concorrência
+  
+Temos dentro do mundo de bancos de dados restrições de integridade. Essas restrições definem o que é válido e o que não é válido para nós dentro desse contexto, alguns exemplos de restrições de integridade são:
+
+- Um funcionário não pode pertencer a mais de um departamento;
+- O preço de venda de um produto não pode ser superior ao seu custo;
+- O código de cada produto deve ser único.
+
