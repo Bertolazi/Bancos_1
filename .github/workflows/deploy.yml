@@ -13,21 +13,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
+      - name: Set up Ruby (para Jekyll)
+        uses: ruby/setup-ruby@v1
         with:
-          python-version: '3.x'
+          ruby-version: '2.7'  # ou a versão que você precisa
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
+          gem install bundler
+          bundle install
 
       - name: Build the site
         run: |
-          mkdocs build
+          bundle exec jekyll build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
+          publish_dir: ./_site  # Diretório padrão do Jekyll
