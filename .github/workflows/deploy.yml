@@ -16,11 +16,11 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.12.3'  # Use a versão do Python necessária
+          python-version: '3.x'
 
-      - name: Install MkDocs
+      - name: Install dependencies
         run: |
-          pip install mkdocs
+          pip install -r requirements.txt
 
       - name: Build the site
         run: |
@@ -30,4 +30,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site  # Diretório onde os arquivos gerados estão localizados
+          publish_dir: ./site
