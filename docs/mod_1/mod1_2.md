@@ -1,0 +1,4 @@
+# Evolução dos sistemas de banco de dados : Arquiteturas cliente/servidor
+
+- **Bancos de dados centralizados (Década de 70):** Nesse modelo de banco de dados tínhamso em um servidor, onde todos os usuários têm acesso, nele estão contido: Os dados, o sistema de gerenciamento de banco de dados e os programas de aplicação de banco de dados, onde deles saíam as informações para os terminais locais e remotos. Como previsto essa arquitetura tem grandes desvantagens que para alguns modelos de negócio não funcionam, como por exemplo, a dependência desse único servidor, e o custo de um servidor para aguentar um banco de dados inteiro rodando dentro dele, além de a depender do tamanho do banco de dados que estamos falando, o dempenho pode vir a cair de forma brusca a comparar com modelos descentralizados.
+
