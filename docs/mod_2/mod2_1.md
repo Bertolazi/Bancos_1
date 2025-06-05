@@ -12,7 +12,7 @@
 - CHAR(n)
     - Tamanho fixo 
     - n = Quantidade de caracteres
-- VARCCHAR(n)
+- VARCHAR(n)
     - Tamanho variável
     - n = Número máximo de caracteres
 - BLOB
@@ -46,3 +46,95 @@ CREATE TABLE tabela(
     <restrições da tabela>
 );
 ```
+
+- Restrições de colunas
+    - NOT NULL
+    - DEFAULT valor
+    - CHECK(condição)
+
+```SQL
+CREATE TABLE tabela(
+    atrib1 tipo [(tamanho)] [NOT NULL | DEFAULT valor] [CHECK (condição)],
+    atrib2 tipo [(tamanho)] [NOT NULL | DEFAULT valor] [CHECK (condição)],
+    ...
+);
+```
+
+- Restrições de tabela
+    - PRIMARY KEY (>atributos de chave primária<)
+    - UNIQUE (>atributos de chave candidata<)
+    - FOREIGN KEY (>atributos de chave estrangeira<)
+    - REFERENCES tabelaRef [(>chave primária<)]
+- >ações<
+    - ON DELETE | ON UPDATE
+        - CASCADE | SET NULL | SET DEFAULT
+
+<p align="center">Exemplo de criação de tabela</p>
+
+```SQL
+CREATE TABLE tabela(
+    atrib1 tipo [(tamanho)] [NOT NULL | DEFAULT valor] [CHECK (condição)],
+    atrib2 tipo [(tamanho)] [NOT NULL | DEFAULT valor] [CHECK (condição)],
+    ...
+    [CONSTRAINT nome da restrição]
+        PRIMARY KEY (<atributos de chave primária>),
+    [CONSTRAINT nome da restrição]
+        UNIQUE (<atributos de chave candidata>)
+    [CONSTRAIN nome da restrição]
+        FOREIGN KEY (<atributos da chave estrangeira>)
+                    REFERENCES tabelaRef [(<chave primária>)]
+            [ON DELETE CASCADE | SET NULL | SET DEFAULT]
+        [ON UPDATE CASCADE | SET NULL | SET DEFAULT],
+        [CONSTRAINT nome da restrição]
+            CHECK (condição)
+);
+```
+
+### Exercício 1
+
+<div style="text-align: center;">
+    <img src="../../assets/ex2_1.png" alt="Ex.1">
+    <p>Fonte - Slides Maurício</p>
+</div>
+
+```SQL
+CREATE TABLE Aluno (
+    Nome VARCHAR(50),
+    NMatr CHAR(9) PRIMARY KEY,
+    Idade INT,
+    DataNasc DATE
+);
+
+CREATE TABLE Professor(
+    Nome VARCHAR(50), 
+    NFunc CHAR(10) PRIMARY KEY, 
+    Idade INT,
+    Titulacao VARCHAR(50)
+);
+
+CREATE TABLE Diciplina(
+    Sigla VARCHAR(7) PRIMARY KEY,
+    Nome VARCHAR(50),
+    NCred INT, 
+    Professor VARCHAR(10) REFERENCES Professor(NFunc),
+    Livro VARCHAR(50)
+);
+
+CREATE TABLE Turma(
+    Sigla VARCHAR(7) REFERENCES Diciplina(Sigla),
+    Numero INT,
+    NAlunos INT,
+    PRIMARY KEY(Sigla, Numero)
+);
+
+CREATE TABLE Matricula(
+    Sigla VARCHAR(7) REFERENCES Diciplina(Sigla),
+    Numero INT REFERENCES Turma(Numero),
+    Alunos VARCHAR(9) REFERENCES Aluno(NMat)
+    Ano INT
+    Nota DECIMAL(3, 2), 
+    PRIMARY KEY(Sigla, Numero, Aluno)
+);
+```
+
+## Comandos DDL
