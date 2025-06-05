@@ -5,7 +5,7 @@ nav:
     - Parte 1: mod_1/mod1_1.md
     - Parte 2: mod_1/mod1_2.md
   - Módulo 2 - Linguagem SQL DDL:
-    - mod_2/mod2_1.md
+    - Parte 1: mod_2/mod2_1.md
 
 theme:
   name: material
