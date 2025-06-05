@@ -90,6 +90,20 @@ CREATE TABLE tabela(
 );
 ```
 
+- **ALTER TABLE** - Incluir/Alterar/Remover definições de colunas e restrições
+    - ALTER TABLE tabela >ação<
+        - >ação<:
+            - ADD novoAtrib tipo [>restrições de coluna<]
+            - ADD [CONSTRAINT nome] >Restrições da tabela<
+            - DROP atributo [CASCADE | RESTRICT]
+            - DROP CONSTRAINT nome
+            - ALTER atributo SET DEFAULT >valor<
+            - ALTER atributo DROP DEFAULT   
+    - ADD novoAtrib tipo [>restrições de coluna<]
+    - DROP atributo [CASCADE | RESTRICT]
+        - CASCADE - Todas as visões e restrições (constraints) que referenciam o atributo são removidos automaticamente
+        - RESTRICT - Atributo só é removido se não houver nenhuma visão ou restrição que o referencie
+
 ### Exercício 1
 
 <div style="text-align: center;">
@@ -129,12 +143,39 @@ CREATE TABLE Turma(
 
 CREATE TABLE Matricula(
     Sigla VARCHAR(7) REFERENCES Diciplina(Sigla),
-    Numero INT REFERENCES Turma(Numero),
-    Alunos VARCHAR(9) REFERENCES Aluno(NMat)
-    Ano INT
+    Numero INT,
+    Alunos VARCHAR(9) REFERENCES Aluno(NMatr),
+    Ano INT,
     Nota DECIMAL(3, 2), 
-    PRIMARY KEY(Sigla, Numero, Aluno)
+    PRIMARY KEY(Sigla, Numero, Alunos),
+    FOREIGN KEY (Sigla, Numero) REFERENCES Turma(Sigla, Numero)
 );
 ```
+### Exercício 2
 
-## Comandos DDL
+<div style="text-align: center;">
+    <img src="../../assets/ex2_2.png" alt="Ex.2">
+    <p>Fonte - Slides Maurício</p>
+</div>
+
+<p align="center">Modificando o código anterior de criação de tabela</p>
+
+```SQL
+ALTER TABLE aluno ADD cidade_origem VARCHAR(50);
+
+ALTER TABLE turma DROP COLUMN numero;
+-- Não deixa só se for CASCADE
+ALTER TABLE turma DROP COLUMN numero CASCADE;
+
+
+
+
+```
+ 
+- O que acontece com a tabela matrícula?
+    - Sem usar o CASCADE:
+        - Ele não deixa apagar se não for utilizado o CASCADE, pois a chave estrangeira de matrícula depende do numero da turma.
+        - Perda de Dados: Se a coluna numero for removida e ela contém dados que são necessários para a tabela matricula, você poderá perder a integridade referencial, ou seja, não será mais possível relacionar registros de matricula com turma.
+        - Erros em Consultas: Qualquer consulta ou operação que dependa da coluna numero em matricula pode falhar após a remoção da coluna. Isso inclui joins, consultas e operações que utilizam essa coluna.
+    - Utilizando o CASCADE:
+        - A chave estrangeira FOREIGN KEY (Sigla, Numero) REFERENCES Turma(Sigla, Numero), agora é FOREIGN KEY (Sigla) REFERENCES Turma(Sigla).
