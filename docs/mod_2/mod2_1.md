@@ -103,6 +103,25 @@ CREATE TABLE tabela(
     - DROP atributo [CASCADE | RESTRICT]
         - CASCADE - Todas as visões e restrições (constraints) que referenciam o atributo são removidos automaticamente
         - RESTRICT - Atributo só é removido se não houver nenhuma visão ou restrição que o referencie
+    - CREATE DOMAIN nome AS tipo
+        - Cria um nome de domínio para especificar um tipo de dado
+        - Dacilita alterações de tipos de dados
+        - Simplifica a legibilidade
+
+ <p align="center">Exemplos CREATE DOMAIN</p>
+
+ ```SQL
+ CREATE DOMAIN CUSTNO 
+ AS INTEGER
+ DEFAULT 9999
+ CHECK (VALUE > 1000)
+
+-- OUTRO EXEMPLO
+
+CREATE DOMANIN PRODTYPE
+AS VARCHAR(12)
+CHECK(VALUE IN ('software','hardware', 'other', 'NA'));
+ ```
 
 ### Exercício 1
 
@@ -112,21 +131,21 @@ CREATE TABLE tabela(
 </div>
 
 ```SQL
-CREATE TABLE Aluno (
+CREATE TABLE public.Aluno (
     Nome VARCHAR(50),
     NMatr CHAR(9) PRIMARY KEY,
     Idade INT,
     DataNasc DATE
 );
 
-CREATE TABLE Professor(
+CREATE TABLE public.Professor(
     Nome VARCHAR(50), 
     NFunc CHAR(10) PRIMARY KEY, 
     Idade INT,
     Titulacao VARCHAR(50)
 );
 
-CREATE TABLE Diciplina(
+CREATE TABLE public.Diciplina(
     Sigla VARCHAR(7) PRIMARY KEY,
     Nome VARCHAR(50),
     NCred INT, 
@@ -134,14 +153,14 @@ CREATE TABLE Diciplina(
     Livro VARCHAR(50)
 );
 
-CREATE TABLE Turma(
+CREATE TABLE public.Turma(
     Sigla VARCHAR(7) REFERENCES Diciplina(Sigla),
     Numero INT,
     NAlunos INT,
     PRIMARY KEY(Sigla, Numero)
 );
 
-CREATE TABLE Matricula(
+CREATE TABLE public.Matricula(
     Sigla VARCHAR(7) REFERENCES Diciplina(Sigla),
     Numero INT,
     Alunos VARCHAR(9) REFERENCES Aluno(NMatr),
@@ -179,3 +198,17 @@ ALTER TABLE turma DROP COLUMN numero CASCADE;
         - Erros em Consultas: Qualquer consulta ou operação que dependa da coluna numero em matricula pode falhar após a remoção da coluna. Isso inclui joins, consultas e operações que utilizam essa coluna.
     - Utilizando o CASCADE:
         - A chave estrangeira FOREIGN KEY (Sigla, Numero) REFERENCES Turma(Sigla, Numero), agora é FOREIGN KEY (Sigla) REFERENCES Turma(Sigla).
+
+### Exercício 3
+
+<div style="text-align: center;">
+    <img src="../../assets/ex2_3.png" alt="Ex.3">
+    <p>Fonte - Slides Maurício</p>
+</div>
+
+```SQL
+CREATE DOMAIN Frequencia 
+AS INTEGER 
+DEFAULT 100 
+CHECK (VALUE >= 0 AND VALUE <=100);
+```
