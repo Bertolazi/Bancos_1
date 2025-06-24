@@ -9,19 +9,19 @@ Para a alta evolução dos sistemas de bancos de dados tivemos antes um avanço 
 - Dados armazenados em disco;
 - Cada arquivo usa uma estrutura de dados.
 
-<p style="text-align: center">Figura 1 - Esquemograma sistemas de informações</p>
+<p style="text-align: center; font-size: 90%;">Figura 1 - Esquemograma sistemas de informações</p>
 
 ![imagem aplicação](../assets/cap_1.png)
 
-<p style="text-align: center">Fonte - Slides do professor Maurício</p>
+<p style="text-align: center; font-size: 90%;">Fonte - Slides do professor Maurício</p>
 
 <br>
 
-<p style="text-align: center">Figura 2 - Redundância e inconsistência nos sistemas de informações</p>
+<p style="text-align: center; font-size: 90%;">Figura 2 - Redundância e inconsistência nos sistemas de informações</p>
 
 ![imagem redundância e inconsistência](../assets/cap_2.png)
 
-<p style="text-align: center">Fonte - Slides do professor Maurício</p>
+<p style="text-align: center; font-size: 90%;">Fonte - Slides do professor Maurício</p>
 
 ## Consistência de dados
 
@@ -49,19 +49,19 @@ Nesses tipos de sistemas de informação temos os dados gravados em disco usando
 
 Mas como podemos fazer com que não tenhamos essa dependência de dados? A resposta é simples, criando um sistema que gerencie a estrutura. Veja com com as imagens abaixo, uma ilustração simplificada do funcionamento.
 
-<p style="text-align: center">Figura 3 - Funcionamento do sistema gerenciador de dados</p>
+<p style="text-align: center; font-size: 90%;">Figura 3 - Funcionamento do sistema gerenciador de dados</p>
 
 ![Sistema gerenciador de dados](../assets/cap_3.png)
 
-<p style="text-align: center">Fonte - Slides do professor Maurício</p>
+<p style="text-align: center; font-size: 90%;">Fonte - Slides do professor Maurício</p>
 
 <br>
 
-<p style="text-align: center">Figura 4 - SGBD (Sistema gerenciador de banco de dados)</p>
+<p style="text-align: center; font-size: 90%;">Figura 4 - SGBD (Sistema gerenciador de banco de dados)</p>
 
 ![SGBD](../assets/cap_4.png)
 
-<p style="text-align: center">Fonte - Slides do professor Maurício</p>
+<p style="text-align: center; font-size: 90%;">Fonte - Slides do professor Maurício</p>
 
 ## Sistema gerenciador de banco de dados (SGBD)
 
@@ -80,12 +80,12 @@ Mas como podemos fazer com que não tenhamos essa dependência de dados? A respo
     - É eficiente;
     - É autônomo em relação às aplicações
 
-<p style="text-align: center">Figura 5 - SGBD aplicado</p>
+<p style="text-align: center; font-size: 90%;">Figura 5 - SGBD aplicado</p>
 
 ![SGBD_1](../assets/cap_5.png)
 
 
-<p style="text-align: center">Fonte - Slides do professor Maurício</p>
+<p style="text-align: center; font-size: 90%;">Fonte - Slides do professor Maurício</p>
 
 - Requisitos fundamentais
   - Segurança
@@ -108,11 +108,11 @@ Temos dentro do mundo de bancos de dados restrições de integridade. Essas rest
 - O preço de venda de um produto não pode ser superior ao seu custo;
 - O código de cada produto deve ser único.
 
-<p style="text-align: center">Figura 6 - Componetes de um SGBD</p>
+<p style="text-align: center; font-size: 90%;">Figura 6 - Componetes de um SGBD</p>
 
 ![SGBD_2](../assets/cap_6.png)
 
-<p style="text-align: center">Fonte - Slides do professor Maurício</p>
+<p style="text-align: center; font-size: 90%;">Fonte - Slides do professor Maurício</p>
 
 ## Utilizando um SGBD
 
@@ -147,9 +147,9 @@ Assim como já se pode imaginar, se podemos criar e estamos falando de banco de 
 
 Mais um conccieto importante é o de **metadados** que também podemos chamar de **dicionário de dados**. São os bancos de dados do sistema, nele se armazena a descrição do sistema, metadados e restrições de segurança e integridade. Temos ainda outras denominações para esses metadados, são eles catálogo de dados, e diretório de dados.
 
-<p style="text-align: center">Figura 7 e 8 - Fluxo SGBD</p>
+<p style="text-align: center; font-size: 90%;">Figura 7 e 8 - Fluxo SGBD</p>
 
 ![SGBD_3](../assets/cap_7.png)
 ![SGBD_4](../assets/cap_8.png)
 
-<p style="text-align: center">Fonte - Slides do professor Maurício</p>
+<p style="text-align: center; font-size: 90%;">Fonte - Slides do professor Maurício</p>
