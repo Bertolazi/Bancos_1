@@ -35,7 +35,7 @@ RE_FIG_NUM = re.compile(r'^(\^)?([1-9][0-9]*(?:.[1-9][0-9]*)*)(?= |$)')
 RE_SEP = re.compile(r'[_-]+')
 
 
-def update_tag(el, fig_type, fig_num, template, prepend):
+def update_tag(el, fig_type, fig_num, template, prepend, md):
     """Update tag ID and caption prefix."""
 
     # Auto add an ID
@@ -47,7 +47,7 @@ def update_tag(el, fig_type, fig_num, template, prepend):
         for child in list(el) if prepend else reversed(el):
             if child.tag == 'figcaption':
                 children = list(child)
-                value = template.format(fig_num)
+                value = md.htmlStash.store(template.format(fig_num))
                 if not len(children) or children[0].tag != 'p':
                     p = etree.Element('p')
                     span = etree.SubElement(p, 'span', {'class': 'caption-prefix'})
@@ -59,7 +59,8 @@ def update_tag(el, fig_type, fig_num, template, prepend):
                     p = children[0]
                     span = etree.Element('span', {'class': 'caption-prefix'})
                     span.text = value
-                    span.tail = (' ' + p.text) if p.text is not None else p.text
+                    empty = not bool(p.text)
+                    span.tail = (' ' + p.text) if not empty else p.text
                     p.text = None
                     p.insert(0, span)
 
@@ -82,7 +83,7 @@ class CaptionTreeprocessor(Treeprocessor):
         """Update caption IDs and prefixes."""
 
         parent_map = {c: p for p in doc.iter() for c in p}
-        last = {k: 0 for k in self.fig_types}
+        last = dict.fromkeys(self.fig_types, 0)
         counters = {k: [0] for k in self.fig_types}
         fig_type = last_type = self.type
         figs = []
@@ -174,7 +175,7 @@ class CaptionTreeprocessor(Treeprocessor):
                 last_type = fig_type
 
                 # Determine if manual number is not smaller than existing figure numbers at that depth
-                if fig_num and all(a <= b for a, b in zip(counter, fig_num)):
+                if fig_num and fig_num > counter:
                     counter[:] = fig_num[:]
 
                 # Apply prefix and ID
@@ -183,7 +184,8 @@ class CaptionTreeprocessor(Treeprocessor):
                     fig_type,
                     '.'.join(str(x) for x in counter[:stack + 1]),
                     self.fig_types.get(fig_type, ''),
-                    prepend
+                    prepend,
+                    self.md
                 )
 
         # Clean up attributes
@@ -201,7 +203,7 @@ class Caption(Block):
     CLASSES = ''
     ARGUMENT = None
     OPTIONS = {
-        'type': ['', type_html_identifier]
+        'type': ('', type_html_identifier)
     }
 
     def on_init(self):
@@ -313,7 +315,8 @@ class Caption(Block):
                     self.NAME,
                     self.fig_num,
                     prefix,
-                    self.prepend
+                    self.prepend,
+                    self.md
                 )
 
 

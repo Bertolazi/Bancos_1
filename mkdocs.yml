@@ -6,8 +6,14 @@ nav:
     - Parte 2: mod_1/mod1_2.md
   - Módulo 2 - Linguagem SQL DDL:
     - Parte 1: mod_2/mod2_1.md
+<<<<<<< HEAD
     - Parte 2: mod_2/mod2_2.md
     - Trabalho 2: mod_2/trab_2.md
+=======
+    - Trbalho 2: mod_2/trab_2.md
+  - Módulo 3 - Transações, Triggers, SP e Views:
+    - Parte 1: mod_3/mod3_1.md 
+>>>>>>> 328fc5af (Aula 1 slide 21)
 
 theme:
   name: material

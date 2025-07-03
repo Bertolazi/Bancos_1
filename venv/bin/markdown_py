@@ -1,4 +1,4 @@
-#!/home/bertolazi/Faculdade/Bancos_1/venv/bin/python3
+#!/home/bertolazi/Faculdade/Bancos_2025/Bancos_1/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
