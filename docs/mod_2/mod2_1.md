@@ -121,7 +121,7 @@ CREATE TABLE tabela(
 CREATE DOMANIN PRODTYPE
 AS VARCHAR(12)
 CHECK(VALUE IN ('software','hardware', 'other', 'NA'));
- ```
+```
 
 ### Exercício 1
 
